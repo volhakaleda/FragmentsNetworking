@@ -20,7 +20,7 @@ public class TopFragment extends Fragment {
 
   private String title;
   private String author;
-  private String year;
+  private int year;
 
   public TopFragment() {
     // Required empty public constructor
@@ -28,12 +28,12 @@ public class TopFragment extends Fragment {
 
 
   // TODO: Rename and change types and number of parameters
-  public static TopFragment newInstance(String title, String author, String year) {
+  public static TopFragment newInstance(String title, String author, int year) {
     TopFragment fragment = new TopFragment();
     Bundle args = new Bundle();
     args.putString(ARG_PARAM1, title);
     args.putString(ARG_PARAM2, author);
-    args.putString(ARG_PARAM3, year);
+    args.putInt(ARG_PARAM3, year);
     fragment.setArguments(args);
     return fragment;
   }
@@ -44,7 +44,7 @@ public class TopFragment extends Fragment {
     if (getArguments() != null) {
       title = getArguments().getString(ARG_PARAM1);
       author = getArguments().getString(ARG_PARAM2);
-      year = getArguments().getString(ARG_PARAM3);
+      year = getArguments().getInt(ARG_PARAM3);
     }
   }
 
@@ -63,6 +63,6 @@ public class TopFragment extends Fragment {
     super.onViewCreated(view, savedInstanceState);
     titleTV.setText(title);
     authorTV.setText(author);
-    yearTV.setText(year);
+    yearTV.setText(String.valueOf(year));
   }
 }
