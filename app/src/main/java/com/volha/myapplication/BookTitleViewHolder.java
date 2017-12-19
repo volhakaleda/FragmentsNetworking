@@ -16,6 +16,14 @@ public class BookTitleViewHolder extends RecyclerView.ViewHolder {
 
   public void bindData(Book book) {
     textView.setText(book.getTitle());
+
+    itemView.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        //I dont know how to get access to FragmentManager within itemView. It is easy to do that in another Fragment and create
+        //bundle and pass data.
+      }
+    });
   }
 
 }
